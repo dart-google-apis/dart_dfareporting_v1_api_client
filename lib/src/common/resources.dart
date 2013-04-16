@@ -20,13 +20,13 @@ class DimensionValuesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<DimensionValueList> query(DimensionValueRequest request, String profileId, {int maxResults, String pageToken, Map optParams}) {
-    var completer = new Completer();
+  async.Future<DimensionValueList> query(DimensionValueRequest request, core.String profileId, {core.int maxResults, core.String pageToken, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/dimensionvalues/query";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (profileId == null) paramErrors.add("profileId is required");
@@ -83,13 +83,13 @@ class FilesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<FileList> list(String profileId, {int maxResults, String pageToken, String sortField, String sortOrder, Map optParams}) {
-    var completer = new Completer();
+  async.Future<FileList> list(core.String profileId, {core.int maxResults, core.String pageToken, core.String sortField, core.String sortOrder, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/files";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (profileId == null) paramErrors.add("profileId is required");
@@ -142,13 +142,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Map> delete(String profileId, String reportId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<core.Map> delete(core.String profileId, core.String reportId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (reportId == null) paramErrors.add("reportId is required");
@@ -183,13 +183,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> get(String profileId, String reportId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> get(core.String profileId, core.String reportId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (reportId == null) paramErrors.add("reportId is required");
@@ -224,13 +224,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> insert(Report request, String profileId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> insert(Report request, core.String profileId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (optParams != null) {
@@ -280,13 +280,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<ReportList> list(String profileId, {int maxResults, String pageToken, String sortField, String sortOrder, Map optParams}) {
-    var completer = new Completer();
+  async.Future<ReportList> list(core.String profileId, {core.int maxResults, core.String pageToken, core.String sortField, core.String sortOrder, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (profileId == null) paramErrors.add("profileId is required");
@@ -331,13 +331,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> patch(Report request, String profileId, String reportId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> patch(Report request, core.String profileId, core.String reportId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (reportId == null) paramErrors.add("reportId is required");
@@ -374,13 +374,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<File> run(String profileId, String reportId, {bool synchronous, Map optParams}) {
-    var completer = new Completer();
+  async.Future<File> run(core.String profileId, core.String reportId, {core.bool synchronous, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}/run";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (reportId == null) paramErrors.add("reportId is required");
@@ -418,13 +418,13 @@ class ReportsResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Report> update(Report request, String profileId, String reportId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<Report> update(Report request, core.String profileId, core.String reportId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (reportId == null) paramErrors.add("reportId is required");
@@ -467,13 +467,13 @@ class ReportsFilesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<File> get(String profileId, String reportId, String fileId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<File> get(core.String profileId, core.String reportId, core.String fileId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}/files/{fileId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (fileId == null) paramErrors.add("fileId is required");
     if (fileId != null) urlParams["fileId"] = fileId;
     if (profileId == null) paramErrors.add("profileId is required");
@@ -528,13 +528,13 @@ class ReportsFilesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<FileList> list(String profileId, String reportId, {int maxResults, String pageToken, String sortField, String sortOrder, Map optParams}) {
-    var completer = new Completer();
+  async.Future<FileList> list(core.String profileId, core.String reportId, {core.int maxResults, core.String pageToken, core.String sortField, core.String sortOrder, core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}/reports/{reportId}/files";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (maxResults != null) queryParams["maxResults"] = maxResults;
     if (pageToken != null) queryParams["pageToken"] = pageToken;
     if (profileId == null) paramErrors.add("profileId is required");
@@ -583,13 +583,13 @@ class UserProfilesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<UserProfile> get(String profileId, {Map optParams}) {
-    var completer = new Completer();
+  async.Future<UserProfile> get(core.String profileId, {core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles/{profileId}";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (profileId == null) paramErrors.add("profileId is required");
     if (profileId != null) urlParams["profileId"] = profileId;
     if (optParams != null) {
@@ -618,13 +618,13 @@ class UserProfilesResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<UserProfileList> list({Map optParams}) {
-    var completer = new Completer();
+  async.Future<UserProfileList> list({core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userprofiles";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (optParams != null) {
       optParams.forEach((key, value) {
         if (value != null && queryParams[key] == null) {

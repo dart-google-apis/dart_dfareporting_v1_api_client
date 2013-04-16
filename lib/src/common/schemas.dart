@@ -4,16 +4,16 @@ part of dfareporting_v1_api_client;
 class DimensionFilter {
 
   /** The name of the dimension to filter. */
-  String dimensionName;
+  core.String dimensionName;
 
   /** Kind of resource this is, in this case dfareporting#dimensionFilter. */
-  String kind;
+  core.String kind;
 
   /** The value of the dimension to filter for. */
-  String value;
+  core.String value;
 
   /** Create new DimensionFilter from JSON data */
-  DimensionFilter.fromJson(Map json) {
+  DimensionFilter.fromJson(core.Map json) {
     if (json.containsKey("dimensionName")) {
       dimensionName = json["dimensionName"];
     }
@@ -26,8 +26,8 @@ class DimensionFilter {
   }
 
   /** Create JSON Object for DimensionFilter */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (dimensionName != null) {
       output["dimensionName"] = dimensionName;
@@ -43,7 +43,7 @@ class DimensionFilter {
   }
 
   /** Return String representation of DimensionFilter */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -51,22 +51,22 @@ class DimensionFilter {
 class DimensionValue {
 
   /** Name of the dimension. */
-  String dimensionName;
+  core.String dimensionName;
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The ID associated with the value if available. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case dfareporting#dimensionValue. */
-  String kind;
+  core.String kind;
 
   /** The value of the dimension. */
-  String value;
+  core.String value;
 
   /** Create new DimensionValue from JSON data */
-  DimensionValue.fromJson(Map json) {
+  DimensionValue.fromJson(core.Map json) {
     if (json.containsKey("dimensionName")) {
       dimensionName = json["dimensionName"];
     }
@@ -85,8 +85,8 @@ class DimensionValue {
   }
 
   /** Create JSON Object for DimensionValue */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (dimensionName != null) {
       output["dimensionName"] = dimensionName;
@@ -108,7 +108,7 @@ class DimensionValue {
   }
 
   /** Return String representation of DimensionValue */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -116,19 +116,19 @@ class DimensionValue {
 class DimensionValueList {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The dimension values returned in this response. */
-  List<DimensionValue> items;
+  core.List<DimensionValue> items;
 
   /** Kind of list this is, in this case dfareporting#dimensionValueList. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through dimension values. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new DimensionValueList from JSON data */
-  DimensionValueList.fromJson(Map json) {
+  DimensionValueList.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -147,14 +147,14 @@ class DimensionValueList {
   }
 
   /** Create JSON Object for DimensionValueList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -170,7 +170,7 @@ class DimensionValueList {
   }
 
   /** Return String representation of DimensionValueList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -178,22 +178,22 @@ class DimensionValueList {
 class DimensionValueRequest {
 
   /** The name of the dimension values should be requested for. */
-  String dimensionName;
+  core.String dimensionName;
 
   /** The end date of the date range for which to retrieve dimension values. A string of the format: "yyyy-MM-dd". */
-  String endDate;
+  core.String endDate;
 
   /** List of filters to filter values by. The filters are ANDed. */
-  List<DimensionFilter> filters;
+  core.List<DimensionFilter> filters;
 
   /** Kind of request this is, in this case dfareporting#dimensionValueRequest. */
-  String kind;
+  core.String kind;
 
   /** The start date of the date range for which to retrieve dimension values. A string of the format: "yyyy-MM-dd". */
-  String startDate;
+  core.String startDate;
 
   /** Create new DimensionValueRequest from JSON data */
-  DimensionValueRequest.fromJson(Map json) {
+  DimensionValueRequest.fromJson(core.Map json) {
     if (json.containsKey("dimensionName")) {
       dimensionName = json["dimensionName"];
     }
@@ -215,8 +215,8 @@ class DimensionValueRequest {
   }
 
   /** Create JSON Object for DimensionValueRequest */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (dimensionName != null) {
       output["dimensionName"] = dimensionName;
@@ -225,7 +225,7 @@ class DimensionValueRequest {
       output["endDate"] = endDate;
     }
     if (filters != null) {
-      output["filters"] = new List();
+      output["filters"] = new core.List();
       filters.forEach((item) {
         output["filters"].add(item.toJson());
       });
@@ -241,7 +241,7 @@ class DimensionValueRequest {
   }
 
   /** Return String representation of DimensionValueRequest */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -252,35 +252,35 @@ class File {
   FileDateRange dateRange;
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The file name of the file. */
-  String fileName;
+  core.String fileName;
 
   /** The unique ID of this report file. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case dfareporting#file. */
-  String kind;
+  core.String kind;
 
   /** The timestamp in milliseconds since epoch when this file was last modified. */
-  String lastModifiedTime;
+  core.String lastModifiedTime;
 
   /** The ID of the report this file was generated from. */
-  String reportId;
+  core.String reportId;
 
   /** The status of the report file, one of:  
 - "PROCESSING" 
 - "REPORT_AVAILABLE" 
 - "FAILED" 
 - "CANCELLED" */
-  String status;
+  core.String status;
 
   /** The urls where the completed report file can be downloaded. */
   FileUrls urls;
 
   /** Create new File from JSON data */
-  File.fromJson(Map json) {
+  File.fromJson(core.Map json) {
     if (json.containsKey("dateRange")) {
       dateRange = new FileDateRange.fromJson(json["dateRange"]);
     }
@@ -311,8 +311,8 @@ class File {
   }
 
   /** Create JSON Object for File */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (dateRange != null) {
       output["dateRange"] = dateRange.toJson();
@@ -346,7 +346,7 @@ class File {
   }
 
   /** Return String representation of File */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -354,13 +354,13 @@ class File {
 class FileDateRange {
 
   /** The end date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
-  String endDate;
+  core.String endDate;
 
   /** The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
-  String startDate;
+  core.String startDate;
 
   /** Create new FileDateRange from JSON data */
-  FileDateRange.fromJson(Map json) {
+  FileDateRange.fromJson(core.Map json) {
     if (json.containsKey("endDate")) {
       endDate = json["endDate"];
     }
@@ -370,8 +370,8 @@ class FileDateRange {
   }
 
   /** Create JSON Object for FileDateRange */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (endDate != null) {
       output["endDate"] = endDate;
@@ -384,7 +384,7 @@ class FileDateRange {
   }
 
   /** Return String representation of FileDateRange */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -395,15 +395,15 @@ class FileUrls {
   FileUrlsCsv csv;
 
   /** Create new FileUrls from JSON data */
-  FileUrls.fromJson(Map json) {
+  FileUrls.fromJson(core.Map json) {
     if (json.containsKey("csv")) {
       csv = new FileUrlsCsv.fromJson(json["csv"]);
     }
   }
 
   /** Create JSON Object for FileUrls */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (csv != null) {
       output["csv"] = csv.toJson();
@@ -413,7 +413,7 @@ class FileUrls {
   }
 
   /** Return String representation of FileUrls */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -421,13 +421,13 @@ class FileUrls {
 class FileUrlsCsv {
 
   /** The url for downloading the report data through the API. */
-  String apiUrl;
+  core.String apiUrl;
 
   /** The url for downloading the report data through a browser. */
-  String browserUrl;
+  core.String browserUrl;
 
   /** Create new FileUrlsCsv from JSON data */
-  FileUrlsCsv.fromJson(Map json) {
+  FileUrlsCsv.fromJson(core.Map json) {
     if (json.containsKey("apiUrl")) {
       apiUrl = json["apiUrl"];
     }
@@ -437,8 +437,8 @@ class FileUrlsCsv {
   }
 
   /** Create JSON Object for FileUrlsCsv */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (apiUrl != null) {
       output["apiUrl"] = apiUrl;
@@ -451,7 +451,7 @@ class FileUrlsCsv {
   }
 
   /** Return String representation of FileUrlsCsv */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -459,19 +459,19 @@ class FileUrlsCsv {
 class FileList {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The files returned in this response. */
-  List<File> items;
+  core.List<File> items;
 
   /** Kind of list this is, in this case dfareporting#fileList. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through files. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new FileList from JSON data */
-  FileList.fromJson(Map json) {
+  FileList.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -490,14 +490,14 @@ class FileList {
   }
 
   /** Create JSON Object for FileList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -513,7 +513,7 @@ class FileList {
   }
 
   /** Return String representation of FileList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -521,43 +521,43 @@ class FileList {
 class Report {
 
   /** The account id this report belongs to. */
-  String accountId;
+  core.String accountId;
 
   /** The report criteria. */
   ReportCriteria criteria;
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The file name used when generating report files for this report. */
-  String fileName;
+  core.String fileName;
 
   /** The unique ID identifying this report resource. */
-  String id;
+  core.String id;
 
   /** Kind of resource this is, in this case dfareporting#report. */
-  String kind;
+  core.String kind;
 
   /** The timestamp (in milliseconds since epoch) of when this report was last modified. */
-  String lastModifiedTime;
+  core.String lastModifiedTime;
 
   /** The name of the report. */
-  String name;
+  core.String name;
 
   /** The user profile id of the owner of this report. */
-  String ownerProfileId;
+  core.String ownerProfileId;
 
   /** The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not "TODAY". */
   ReportSchedule schedule;
 
   /** The subbaccount id this report belongs to if applicable. */
-  String subAccountId;
+  core.String subAccountId;
 
   /** The type of the report, currently only "STANDARD" is supported. */
-  String type;
+  core.String type;
 
   /** Create new Report from JSON data */
-  Report.fromJson(Map json) {
+  Report.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
       accountId = json["accountId"];
     }
@@ -597,8 +597,8 @@ class Report {
   }
 
   /** Create JSON Object for Report */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accountId != null) {
       output["accountId"] = accountId;
@@ -641,7 +641,7 @@ class Report {
   }
 
   /** Return String representation of Report */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -659,16 +659,16 @@ class ReportCriteria {
 
   /** The list of filters dimensions are filtered on.
 Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed. */
-  List<DimensionValue> dimensionFilters;
+  core.List<DimensionValue> dimensionFilters;
 
   /** The list of dimensions the report should include. */
-  List<SortedDimension> dimensions;
+  core.List<SortedDimension> dimensions;
 
   /** The list of names of metrics the report should include. */
-  List<String> metricNames;
+  core.List<core.String> metricNames;
 
   /** Create new ReportCriteria from JSON data */
-  ReportCriteria.fromJson(Map json) {
+  ReportCriteria.fromJson(core.Map json) {
     if (json.containsKey("activities")) {
       activities = new ReportCriteriaActivities.fromJson(json["activities"]);
     }
@@ -699,8 +699,8 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
   }
 
   /** Create JSON Object for ReportCriteria */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (activities != null) {
       output["activities"] = activities.toJson();
@@ -712,19 +712,19 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
       output["dateRange"] = dateRange.toJson();
     }
     if (dimensionFilters != null) {
-      output["dimensionFilters"] = new List();
+      output["dimensionFilters"] = new core.List();
       dimensionFilters.forEach((item) {
         output["dimensionFilters"].add(item.toJson());
       });
     }
     if (dimensions != null) {
-      output["dimensions"] = new List();
+      output["dimensions"] = new core.List();
       dimensions.forEach((item) {
         output["dimensions"].add(item.toJson());
       });
     }
     if (metricNames != null) {
-      output["metricNames"] = new List();
+      output["metricNames"] = new core.List();
       metricNames.forEach((item) {
         output["metricNames"].add(item);
       });
@@ -734,7 +734,7 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
   }
 
   /** Return String representation of ReportCriteria */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -742,13 +742,13 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
 class ReportCriteriaActivities {
 
   /** List of activity filters. The dimension values need to be all either of type "dfa:activity" or "dfa:activityGroup". */
-  List<DimensionValue> filters;
+  core.List<DimensionValue> filters;
 
   /** List of names of floodlight activity metrics. */
-  List<String> metricNames;
+  core.List<core.String> metricNames;
 
   /** Create new ReportCriteriaActivities from JSON data */
-  ReportCriteriaActivities.fromJson(Map json) {
+  ReportCriteriaActivities.fromJson(core.Map json) {
     if (json.containsKey("filters")) {
       filters = [];
       json["filters"].forEach((item) {
@@ -764,17 +764,17 @@ class ReportCriteriaActivities {
   }
 
   /** Create JSON Object for ReportCriteriaActivities */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (filters != null) {
-      output["filters"] = new List();
+      output["filters"] = new core.List();
       filters.forEach((item) {
         output["filters"].add(item.toJson());
       });
     }
     if (metricNames != null) {
-      output["metricNames"] = new List();
+      output["metricNames"] = new core.List();
       metricNames.forEach((item) {
         output["metricNames"].add(item);
       });
@@ -784,7 +784,7 @@ class ReportCriteriaActivities {
   }
 
   /** Return String representation of ReportCriteriaActivities */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -792,7 +792,7 @@ class ReportCriteriaActivities {
 class ReportCriteriaDateRange {
 
   /** The end date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
-  String endDate;
+  core.String endDate;
 
   /** The date range relative to the date of when the report is run, one of:  
 - "TODAY" 
@@ -810,13 +810,13 @@ class ReportCriteriaDateRange {
 - "LAST_90_DAYS" 
 - "LAST_365_DAYS" 
 - "LAST_24_MONTHS" */
-  String relativeDateRange;
+  core.String relativeDateRange;
 
   /** The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
-  String startDate;
+  core.String startDate;
 
   /** Create new ReportCriteriaDateRange from JSON data */
-  ReportCriteriaDateRange.fromJson(Map json) {
+  ReportCriteriaDateRange.fromJson(core.Map json) {
     if (json.containsKey("endDate")) {
       endDate = json["endDate"];
     }
@@ -829,8 +829,8 @@ class ReportCriteriaDateRange {
   }
 
   /** Create JSON Object for ReportCriteriaDateRange */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (endDate != null) {
       output["endDate"] = endDate;
@@ -846,7 +846,7 @@ class ReportCriteriaDateRange {
   }
 
   /** Return String representation of ReportCriteriaDateRange */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -854,10 +854,10 @@ class ReportCriteriaDateRange {
 class ReportCriteriaCustomRichMediaEvents {
 
   /** List of custom rich media event IDs. Dimension values must be all of type dfa:richMediaEventTypeIdAndName. */
-  List<DimensionValue> filteredEventIds;
+  core.List<DimensionValue> filteredEventIds;
 
   /** Create new ReportCriteriaCustomRichMediaEvents from JSON data */
-  ReportCriteriaCustomRichMediaEvents.fromJson(Map json) {
+  ReportCriteriaCustomRichMediaEvents.fromJson(core.Map json) {
     if (json.containsKey("filteredEventIds")) {
       filteredEventIds = [];
       json["filteredEventIds"].forEach((item) {
@@ -867,11 +867,11 @@ class ReportCriteriaCustomRichMediaEvents {
   }
 
   /** Create JSON Object for ReportCriteriaCustomRichMediaEvents */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (filteredEventIds != null) {
-      output["filteredEventIds"] = new List();
+      output["filteredEventIds"] = new core.List();
       filteredEventIds.forEach((item) {
         output["filteredEventIds"].add(item.toJson());
       });
@@ -881,7 +881,7 @@ class ReportCriteriaCustomRichMediaEvents {
   }
 
   /** Return String representation of ReportCriteriaCustomRichMediaEvents */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -889,13 +889,13 @@ class ReportCriteriaCustomRichMediaEvents {
 class ReportSchedule {
 
   /** Whether the schedule is active or not. Must be set to either true or false. */
-  bool active;
+  core.bool active;
 
   /** Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY". */
-  int every;
+  core.int every;
 
   /** The expiration date when the scheduled report stops running. */
-  String expirationDate;
+  core.String expirationDate;
 
   /** The interval the report is repeated for, one of:  
 - "DAILY", also requires field "every" to be set. 
@@ -904,22 +904,22 @@ class ReportSchedule {
 - "MONTHLY", also requires fields "every" and "runsOnDayOfMonth" to be set. 
 - "QUARTERLY" 
 - "YEARLY" */
-  String repeats;
+  core.String repeats;
 
   /** List of week days "WEEKLY" scheduled reports should run on. */
-  List<String> repeatsOnWeekDays;
+  core.List<core.String> repeatsOnWeekDays;
 
   /** Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month. Possible values are:  
 - DAY_OF_MONTH 
 - WEEK_OF_MONTH  
 Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month. */
-  String runsOnDayOfMonth;
+  core.String runsOnDayOfMonth;
 
   /** Start date of date range for which scheduled reports should be run. */
-  String startDate;
+  core.String startDate;
 
   /** Create new ReportSchedule from JSON data */
-  ReportSchedule.fromJson(Map json) {
+  ReportSchedule.fromJson(core.Map json) {
     if (json.containsKey("active")) {
       active = json["active"];
     }
@@ -947,8 +947,8 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
   }
 
   /** Create JSON Object for ReportSchedule */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (active != null) {
       output["active"] = active;
@@ -963,7 +963,7 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
       output["repeats"] = repeats;
     }
     if (repeatsOnWeekDays != null) {
-      output["repeatsOnWeekDays"] = new List();
+      output["repeatsOnWeekDays"] = new core.List();
       repeatsOnWeekDays.forEach((item) {
         output["repeatsOnWeekDays"].add(item);
       });
@@ -979,7 +979,7 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
   }
 
   /** Return String representation of ReportSchedule */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -987,19 +987,19 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
 class ReportList {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The reports returned in this response. */
-  List<Report> items;
+  core.List<Report> items;
 
   /** Kind of list this is, in this case dfareporting#reportList. */
-  String kind;
+  core.String kind;
 
   /** Continuation token used to page through reports. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Create new ReportList from JSON data */
-  ReportList.fromJson(Map json) {
+  ReportList.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -1018,14 +1018,14 @@ class ReportList {
   }
 
   /** Create JSON Object for ReportList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1041,7 +1041,7 @@ class ReportList {
   }
 
   /** Return String representation of ReportList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1049,18 +1049,18 @@ class ReportList {
 class SortedDimension {
 
   /** Kind of resource this is, in this case dfareporting#sortedDimension. */
-  String kind;
+  core.String kind;
 
   /** The name of the dimension. */
-  String name;
+  core.String name;
 
   /** An optional sort order for the dimension column, one of:  
 - "ASCENDING" 
 - "DESCENDING" */
-  String sortOrder;
+  core.String sortOrder;
 
   /** Create new SortedDimension from JSON data */
-  SortedDimension.fromJson(Map json) {
+  SortedDimension.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -1073,8 +1073,8 @@ class SortedDimension {
   }
 
   /** Create JSON Object for SortedDimension */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -1090,7 +1090,7 @@ class SortedDimension {
   }
 
   /** Return String representation of SortedDimension */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1098,31 +1098,31 @@ class SortedDimension {
 class UserProfile {
 
   /** The account ID this profile belongs to. */
-  String accountId;
+  core.String accountId;
 
   /** The account name this profile belongs to. */
-  String accountName;
+  core.String accountName;
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** Kind of resource this is, in this case dfareporting#userProfile. */
-  String kind;
+  core.String kind;
 
   /** The unique ID of the user profile. */
-  String profileId;
+  core.String profileId;
 
   /** The sub account ID this profile belongs to if applicable. */
-  String subAccountId;
+  core.String subAccountId;
 
   /** The sub account name this profile belongs to if applicable. */
-  String subAccountName;
+  core.String subAccountName;
 
   /** The user name. */
-  String userName;
+  core.String userName;
 
   /** Create new UserProfile from JSON data */
-  UserProfile.fromJson(Map json) {
+  UserProfile.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
       accountId = json["accountId"];
     }
@@ -1150,8 +1150,8 @@ class UserProfile {
   }
 
   /** Create JSON Object for UserProfile */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accountId != null) {
       output["accountId"] = accountId;
@@ -1182,7 +1182,7 @@ class UserProfile {
   }
 
   /** Return String representation of UserProfile */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1190,16 +1190,16 @@ class UserProfile {
 class UserProfileList {
 
   /** ETag of this response for caching purposes. */
-  String etag;
+  core.String etag;
 
   /** The user profiles returned in this response. */
-  List<UserProfile> items;
+  core.List<UserProfile> items;
 
   /** Kind of list this is, in this case dfareporting#userProfileList. */
-  String kind;
+  core.String kind;
 
   /** Create new UserProfileList from JSON data */
-  UserProfileList.fromJson(Map json) {
+  UserProfileList.fromJson(core.Map json) {
     if (json.containsKey("etag")) {
       etag = json["etag"];
     }
@@ -1215,14 +1215,14 @@ class UserProfileList {
   }
 
   /** Create JSON Object for UserProfileList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (etag != null) {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1235,7 +1235,7 @@ class UserProfileList {
   }
 
   /** Return String representation of UserProfileList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
