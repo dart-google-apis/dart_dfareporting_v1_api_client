@@ -4,14 +4,14 @@ part of dfareporting_v1_api_browser;
 /** Lets you create, run and download reports. */
 class Dfareporting extends BrowserClient {
 
-  DimensionValuesResource _dimensionValues;
-  DimensionValuesResource get dimensionValues => _dimensionValues;
-  FilesResource _files;
-  FilesResource get files => _files;
-  ReportsResource _reports;
-  ReportsResource get reports => _reports;
-  UserProfilesResource _userProfiles;
-  UserProfilesResource get userProfiles => _userProfiles;
+  DimensionValuesResource_ _dimensionValues;
+  DimensionValuesResource_ get dimensionValues => _dimensionValues;
+  FilesResource_ _files;
+  FilesResource_ get files => _files;
+  ReportsResource_ _reports;
+  ReportsResource_ get reports => _reports;
+  UserProfilesResource_ _userProfiles;
+  UserProfilesResource_ get userProfiles => _userProfiles;
 
   /** OAuth Scope2: View and manage DoubleClick for Advertisers reports */
   static const core.String DFAREPORTING_SCOPE = "https://www.googleapis.com/auth/dfareporting";
@@ -68,9 +68,9 @@ class Dfareporting extends BrowserClient {
   Dfareporting([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/dfareporting/v1/";
     rootUrl = "https://www.googleapis.com:443/";
-    _dimensionValues = new DimensionValuesResource(this);
-    _files = new FilesResource(this);
-    _reports = new ReportsResource(this);
-    _userProfiles = new UserProfilesResource(this);
+    _dimensionValues = new DimensionValuesResource_(this);
+    _files = new FilesResource_(this);
+    _reports = new ReportsResource_(this);
+    _userProfiles = new UserProfilesResource_(this);
   }
 }

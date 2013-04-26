@@ -1,8 +1,8 @@
 part of dfareporting_v1_api_client;
 
-class DimensionValuesResource extends Resource {
+class DimensionValuesResource_ extends Resource {
 
-  DimensionValuesResource(Client client) : super(client) {
+  DimensionValuesResource_(Client client) : super(client) {
   }
 
   /**
@@ -40,7 +40,7 @@ class DimensionValuesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -53,9 +53,9 @@ class DimensionValuesResource extends Resource {
   }
 }
 
-class FilesResource extends Resource {
+class FilesResource_ extends Resource {
 
-  FilesResource(Client client) : super(client) {
+  FilesResource_(Client client) : super(client) {
   }
 
   /**
@@ -111,7 +111,7 @@ class FilesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -124,13 +124,13 @@ class FilesResource extends Resource {
   }
 }
 
-class ReportsResource extends Resource {
+class ReportsResource_ extends Resource {
 
-  ReportsFilesResource _files;
-  ReportsFilesResource get files => _files;
+  ReportsFilesResource_ _files;
+  ReportsFilesResource_ get files => _files;
 
-  ReportsResource(Client client) : super(client) {
-  _files = new ReportsFilesResource(client);
+  ReportsResource_(Client client) : super(client) {
+  _files = new ReportsFilesResource_(client);
   }
 
   /**
@@ -162,7 +162,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -203,7 +203,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -242,7 +242,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -308,7 +308,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -351,7 +351,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -395,7 +395,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -438,7 +438,7 @@ class ReportsResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -451,9 +451,9 @@ class ReportsResource extends Resource {
   }
 }
 
-class ReportsFilesResource extends Resource {
+class ReportsFilesResource_ extends Resource {
 
-  ReportsFilesResource(Client client) : super(client) {
+  ReportsFilesResource_(Client client) : super(client) {
   }
 
   /**
@@ -489,7 +489,7 @@ class ReportsFilesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -558,7 +558,7 @@ class ReportsFilesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -571,9 +571,9 @@ class ReportsFilesResource extends Resource {
   }
 }
 
-class UserProfilesResource extends Resource {
+class UserProfilesResource_ extends Resource {
 
-  UserProfilesResource(Client client) : super(client) {
+  UserProfilesResource_(Client client) : super(client) {
   }
 
   /**
@@ -601,7 +601,7 @@ class UserProfilesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -634,7 +634,7 @@ class UserProfilesResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
