@@ -67,7 +67,7 @@ class Dfareporting extends ConsoleClient {
 
   Dfareporting([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/dfareporting/v1/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _dimensionValues = new DimensionValuesResource_(this);
     _files = new FilesResource_(this);
     _reports = new ReportsResource_(this);

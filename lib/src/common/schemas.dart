@@ -258,16 +258,16 @@ class File {
   core.String fileName;
 
   /** The unique ID of this report file. */
-  core.String id;
+  core.int id;
 
   /** Kind of resource this is, in this case dfareporting#file. */
   core.String kind;
 
   /** The timestamp in milliseconds since epoch when this file was last modified. */
-  core.String lastModifiedTime;
+  core.int lastModifiedTime;
 
   /** The ID of the report this file was generated from. */
-  core.String reportId;
+  core.int reportId;
 
   /** The status of the report file, one of:  
 - "PROCESSING" 
@@ -521,7 +521,7 @@ class FileList {
 class Report {
 
   /** The account id this report belongs to. */
-  core.String accountId;
+  core.int accountId;
 
   /** The report criteria. */
   ReportCriteria criteria;
@@ -533,7 +533,7 @@ class Report {
   core.String fileName;
 
   /** The unique ID identifying this report resource. */
-  core.String id;
+  core.int id;
 
   /** Kind of resource this is, in this case dfareporting#report. */
   core.String kind;
@@ -545,13 +545,13 @@ class Report {
   core.String name;
 
   /** The user profile id of the owner of this report. */
-  core.String ownerProfileId;
+  core.int ownerProfileId;
 
   /** The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not "TODAY". */
   ReportSchedule schedule;
 
   /** The subbaccount id this report belongs to if applicable. */
-  core.String subAccountId;
+  core.int subAccountId;
 
   /** The type of the report, currently only "STANDARD" is supported. */
   core.String type;
@@ -1098,7 +1098,7 @@ class SortedDimension {
 class UserProfile {
 
   /** The account ID this profile belongs to. */
-  core.String accountId;
+  core.int accountId;
 
   /** The account name this profile belongs to. */
   core.String accountName;
@@ -1110,10 +1110,10 @@ class UserProfile {
   core.String kind;
 
   /** The unique ID of the user profile. */
-  core.String profileId;
+  core.int profileId;
 
   /** The sub account ID this profile belongs to if applicable. */
-  core.String subAccountId;
+  core.int subAccountId;
 
   /** The sub account name this profile belongs to if applicable. */
   core.String subAccountName;
