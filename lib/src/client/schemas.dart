@@ -291,16 +291,28 @@ class File {
       fileName = json["fileName"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
     if (json.containsKey("lastModifiedTime")) {
-      lastModifiedTime = json["lastModifiedTime"];
+      if(json["lastModifiedTime"] is core.String){
+        lastModifiedTime = core.int.parse(json["lastModifiedTime"]);
+      }else{
+        lastModifiedTime = json["lastModifiedTime"];
+      }
     }
     if (json.containsKey("reportId")) {
-      reportId = json["reportId"];
+      if(json["reportId"] is core.String){
+        reportId = core.int.parse(json["reportId"]);
+      }else{
+        reportId = json["reportId"];
+      }
     }
     if (json.containsKey("status")) {
       status = json["status"];
@@ -559,7 +571,11 @@ class Report {
   /** Create new Report from JSON data */
   Report.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
-      accountId = json["accountId"];
+      if(json["accountId"] is core.String){
+        accountId = core.int.parse(json["accountId"]);
+      }else{
+        accountId = json["accountId"];
+      }
     }
     if (json.containsKey("criteria")) {
       criteria = new ReportCriteria.fromJson(json["criteria"]);
@@ -571,7 +587,11 @@ class Report {
       fileName = json["fileName"];
     }
     if (json.containsKey("id")) {
-      id = json["id"];
+      if(json["id"] is core.String){
+        id = core.int.parse(json["id"]);
+      }else{
+        id = json["id"];
+      }
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -583,13 +603,21 @@ class Report {
       name = json["name"];
     }
     if (json.containsKey("ownerProfileId")) {
-      ownerProfileId = json["ownerProfileId"];
+      if(json["ownerProfileId"] is core.String){
+        ownerProfileId = core.int.parse(json["ownerProfileId"]);
+      }else{
+        ownerProfileId = json["ownerProfileId"];
+      }
     }
     if (json.containsKey("schedule")) {
       schedule = new ReportSchedule.fromJson(json["schedule"]);
     }
     if (json.containsKey("subAccountId")) {
-      subAccountId = json["subAccountId"];
+      if(json["subAccountId"] is core.String){
+        subAccountId = core.int.parse(json["subAccountId"]);
+      }else{
+        subAccountId = json["subAccountId"];
+      }
     }
     if (json.containsKey("type")) {
       type = json["type"];
@@ -1124,7 +1152,11 @@ class UserProfile {
   /** Create new UserProfile from JSON data */
   UserProfile.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
-      accountId = json["accountId"];
+      if(json["accountId"] is core.String){
+        accountId = core.int.parse(json["accountId"]);
+      }else{
+        accountId = json["accountId"];
+      }
     }
     if (json.containsKey("accountName")) {
       accountName = json["accountName"];
@@ -1136,10 +1168,18 @@ class UserProfile {
       kind = json["kind"];
     }
     if (json.containsKey("profileId")) {
-      profileId = json["profileId"];
+      if(json["profileId"] is core.String){
+        profileId = core.int.parse(json["profileId"]);
+      }else{
+        profileId = json["profileId"];
+      }
     }
     if (json.containsKey("subAccountId")) {
-      subAccountId = json["subAccountId"];
+      if(json["subAccountId"] is core.String){
+        subAccountId = core.int.parse(json["subAccountId"]);
+      }else{
+        subAccountId = json["subAccountId"];
+      }
     }
     if (json.containsKey("subAccountName")) {
       subAccountName = json["subAccountName"];
