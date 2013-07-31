@@ -1,4 +1,4 @@
-part of dfareporting_v1_api_client;
+part of dfareporting_v1_api;
 
 /** Represents a dimension filter. */
 class DimensionFilter {
@@ -133,10 +133,7 @@ class DimensionValueList {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new DimensionValue.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new DimensionValue.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -154,10 +151,7 @@ class DimensionValueList {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -201,10 +195,7 @@ class DimensionValueRequest {
       endDate = json["endDate"];
     }
     if (json.containsKey("filters")) {
-      filters = [];
-      json["filters"].forEach((item) {
-        filters.add(new DimensionFilter.fromJson(item));
-      });
+      filters = json["filters"].map((filtersItem) => new DimensionFilter.fromJson(filtersItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -225,10 +216,7 @@ class DimensionValueRequest {
       output["endDate"] = endDate;
     }
     if (filters != null) {
-      output["filters"] = new core.List();
-      filters.forEach((item) {
-        output["filters"].add(item.toJson());
-      });
+      output["filters"] = filters.map((filtersItem) => filtersItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -291,28 +279,16 @@ class File {
       fileName = json["fileName"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
     if (json.containsKey("lastModifiedTime")) {
-      if(json["lastModifiedTime"] is core.String){
-        lastModifiedTime = core.int.parse(json["lastModifiedTime"]);
-      }else{
-        lastModifiedTime = json["lastModifiedTime"];
-      }
+      lastModifiedTime = (json["lastModifiedTime"] is core.String) ? core.int.parse(json["lastModifiedTime"]) : json["lastModifiedTime"];
     }
     if (json.containsKey("reportId")) {
-      if(json["reportId"] is core.String){
-        reportId = core.int.parse(json["reportId"]);
-      }else{
-        reportId = json["reportId"];
-      }
+      reportId = (json["reportId"] is core.String) ? core.int.parse(json["reportId"]) : json["reportId"];
     }
     if (json.containsKey("status")) {
       status = json["status"];
@@ -488,10 +464,7 @@ class FileList {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new File.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new File.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -509,10 +482,7 @@ class FileList {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -571,11 +541,7 @@ class Report {
   /** Create new Report from JSON data */
   Report.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
-      if(json["accountId"] is core.String){
-        accountId = core.int.parse(json["accountId"]);
-      }else{
-        accountId = json["accountId"];
-      }
+      accountId = (json["accountId"] is core.String) ? core.int.parse(json["accountId"]) : json["accountId"];
     }
     if (json.containsKey("criteria")) {
       criteria = new ReportCriteria.fromJson(json["criteria"]);
@@ -587,11 +553,7 @@ class Report {
       fileName = json["fileName"];
     }
     if (json.containsKey("id")) {
-      if(json["id"] is core.String){
-        id = core.int.parse(json["id"]);
-      }else{
-        id = json["id"];
-      }
+      id = (json["id"] is core.String) ? core.int.parse(json["id"]) : json["id"];
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -603,21 +565,13 @@ class Report {
       name = json["name"];
     }
     if (json.containsKey("ownerProfileId")) {
-      if(json["ownerProfileId"] is core.String){
-        ownerProfileId = core.int.parse(json["ownerProfileId"]);
-      }else{
-        ownerProfileId = json["ownerProfileId"];
-      }
+      ownerProfileId = (json["ownerProfileId"] is core.String) ? core.int.parse(json["ownerProfileId"]) : json["ownerProfileId"];
     }
     if (json.containsKey("schedule")) {
       schedule = new ReportSchedule.fromJson(json["schedule"]);
     }
     if (json.containsKey("subAccountId")) {
-      if(json["subAccountId"] is core.String){
-        subAccountId = core.int.parse(json["subAccountId"]);
-      }else{
-        subAccountId = json["subAccountId"];
-      }
+      subAccountId = (json["subAccountId"] is core.String) ? core.int.parse(json["subAccountId"]) : json["subAccountId"];
     }
     if (json.containsKey("type")) {
       type = json["type"];
@@ -707,22 +661,13 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
       dateRange = new ReportCriteriaDateRange.fromJson(json["dateRange"]);
     }
     if (json.containsKey("dimensionFilters")) {
-      dimensionFilters = [];
-      json["dimensionFilters"].forEach((item) {
-        dimensionFilters.add(new DimensionValue.fromJson(item));
-      });
+      dimensionFilters = json["dimensionFilters"].map((dimensionFiltersItem) => new DimensionValue.fromJson(dimensionFiltersItem)).toList();
     }
     if (json.containsKey("dimensions")) {
-      dimensions = [];
-      json["dimensions"].forEach((item) {
-        dimensions.add(new SortedDimension.fromJson(item));
-      });
+      dimensions = json["dimensions"].map((dimensionsItem) => new SortedDimension.fromJson(dimensionsItem)).toList();
     }
     if (json.containsKey("metricNames")) {
-      metricNames = [];
-      json["metricNames"].forEach((item) {
-        metricNames.add(item);
-      });
+      metricNames = json["metricNames"].toList();
     }
   }
 
@@ -740,22 +685,13 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
       output["dateRange"] = dateRange.toJson();
     }
     if (dimensionFilters != null) {
-      output["dimensionFilters"] = new core.List();
-      dimensionFilters.forEach((item) {
-        output["dimensionFilters"].add(item.toJson());
-      });
+      output["dimensionFilters"] = dimensionFilters.map((dimensionFiltersItem) => dimensionFiltersItem.toJson()).toList();
     }
     if (dimensions != null) {
-      output["dimensions"] = new core.List();
-      dimensions.forEach((item) {
-        output["dimensions"].add(item.toJson());
-      });
+      output["dimensions"] = dimensions.map((dimensionsItem) => dimensionsItem.toJson()).toList();
     }
     if (metricNames != null) {
-      output["metricNames"] = new core.List();
-      metricNames.forEach((item) {
-        output["metricNames"].add(item);
-      });
+      output["metricNames"] = metricNames.toList();
     }
 
     return output;
@@ -778,16 +714,10 @@ class ReportCriteriaActivities {
   /** Create new ReportCriteriaActivities from JSON data */
   ReportCriteriaActivities.fromJson(core.Map json) {
     if (json.containsKey("filters")) {
-      filters = [];
-      json["filters"].forEach((item) {
-        filters.add(new DimensionValue.fromJson(item));
-      });
+      filters = json["filters"].map((filtersItem) => new DimensionValue.fromJson(filtersItem)).toList();
     }
     if (json.containsKey("metricNames")) {
-      metricNames = [];
-      json["metricNames"].forEach((item) {
-        metricNames.add(item);
-      });
+      metricNames = json["metricNames"].toList();
     }
   }
 
@@ -796,22 +726,45 @@ class ReportCriteriaActivities {
     var output = new core.Map();
 
     if (filters != null) {
-      output["filters"] = new core.List();
-      filters.forEach((item) {
-        output["filters"].add(item.toJson());
-      });
+      output["filters"] = filters.map((filtersItem) => filtersItem.toJson()).toList();
     }
     if (metricNames != null) {
-      output["metricNames"] = new core.List();
-      metricNames.forEach((item) {
-        output["metricNames"].add(item);
-      });
+      output["metricNames"] = metricNames.toList();
     }
 
     return output;
   }
 
   /** Return String representation of ReportCriteriaActivities */
+  core.String toString() => JSON.stringify(this.toJson());
+
+}
+
+/** Custom Rich Media Events group. */
+class ReportCriteriaCustomRichMediaEvents {
+
+  /** List of custom rich media event IDs. Dimension values must be all of type dfa:richMediaEventTypeIdAndName. */
+  core.List<DimensionValue> filteredEventIds;
+
+  /** Create new ReportCriteriaCustomRichMediaEvents from JSON data */
+  ReportCriteriaCustomRichMediaEvents.fromJson(core.Map json) {
+    if (json.containsKey("filteredEventIds")) {
+      filteredEventIds = json["filteredEventIds"].map((filteredEventIdsItem) => new DimensionValue.fromJson(filteredEventIdsItem)).toList();
+    }
+  }
+
+  /** Create JSON Object for ReportCriteriaCustomRichMediaEvents */
+  core.Map toJson() {
+    var output = new core.Map();
+
+    if (filteredEventIds != null) {
+      output["filteredEventIds"] = filteredEventIds.map((filteredEventIdsItem) => filteredEventIdsItem.toJson()).toList();
+    }
+
+    return output;
+  }
+
+  /** Return String representation of ReportCriteriaCustomRichMediaEvents */
   core.String toString() => JSON.stringify(this.toJson());
 
 }
@@ -878,41 +831,6 @@ class ReportCriteriaDateRange {
 
 }
 
-/** Custom Rich Media Events group. */
-class ReportCriteriaCustomRichMediaEvents {
-
-  /** List of custom rich media event IDs. Dimension values must be all of type dfa:richMediaEventTypeIdAndName. */
-  core.List<DimensionValue> filteredEventIds;
-
-  /** Create new ReportCriteriaCustomRichMediaEvents from JSON data */
-  ReportCriteriaCustomRichMediaEvents.fromJson(core.Map json) {
-    if (json.containsKey("filteredEventIds")) {
-      filteredEventIds = [];
-      json["filteredEventIds"].forEach((item) {
-        filteredEventIds.add(new DimensionValue.fromJson(item));
-      });
-    }
-  }
-
-  /** Create JSON Object for ReportCriteriaCustomRichMediaEvents */
-  core.Map toJson() {
-    var output = new core.Map();
-
-    if (filteredEventIds != null) {
-      output["filteredEventIds"] = new core.List();
-      filteredEventIds.forEach((item) {
-        output["filteredEventIds"].add(item.toJson());
-      });
-    }
-
-    return output;
-  }
-
-  /** Return String representation of ReportCriteriaCustomRichMediaEvents */
-  core.String toString() => JSON.stringify(this.toJson());
-
-}
-
 /** The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not "TODAY". */
 class ReportSchedule {
 
@@ -961,10 +879,7 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
       repeats = json["repeats"];
     }
     if (json.containsKey("repeatsOnWeekDays")) {
-      repeatsOnWeekDays = [];
-      json["repeatsOnWeekDays"].forEach((item) {
-        repeatsOnWeekDays.add(item);
-      });
+      repeatsOnWeekDays = json["repeatsOnWeekDays"].toList();
     }
     if (json.containsKey("runsOnDayOfMonth")) {
       runsOnDayOfMonth = json["runsOnDayOfMonth"];
@@ -991,10 +906,7 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
       output["repeats"] = repeats;
     }
     if (repeatsOnWeekDays != null) {
-      output["repeatsOnWeekDays"] = new core.List();
-      repeatsOnWeekDays.forEach((item) {
-        output["repeatsOnWeekDays"].add(item);
-      });
+      output["repeatsOnWeekDays"] = repeatsOnWeekDays.toList();
     }
     if (runsOnDayOfMonth != null) {
       output["runsOnDayOfMonth"] = runsOnDayOfMonth;
@@ -1032,10 +944,7 @@ class ReportList {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new Report.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new Report.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1053,10 +962,7 @@ class ReportList {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1152,11 +1058,7 @@ class UserProfile {
   /** Create new UserProfile from JSON data */
   UserProfile.fromJson(core.Map json) {
     if (json.containsKey("accountId")) {
-      if(json["accountId"] is core.String){
-        accountId = core.int.parse(json["accountId"]);
-      }else{
-        accountId = json["accountId"];
-      }
+      accountId = (json["accountId"] is core.String) ? core.int.parse(json["accountId"]) : json["accountId"];
     }
     if (json.containsKey("accountName")) {
       accountName = json["accountName"];
@@ -1168,18 +1070,10 @@ class UserProfile {
       kind = json["kind"];
     }
     if (json.containsKey("profileId")) {
-      if(json["profileId"] is core.String){
-        profileId = core.int.parse(json["profileId"]);
-      }else{
-        profileId = json["profileId"];
-      }
+      profileId = (json["profileId"] is core.String) ? core.int.parse(json["profileId"]) : json["profileId"];
     }
     if (json.containsKey("subAccountId")) {
-      if(json["subAccountId"] is core.String){
-        subAccountId = core.int.parse(json["subAccountId"]);
-      }else{
-        subAccountId = json["subAccountId"];
-      }
+      subAccountId = (json["subAccountId"] is core.String) ? core.int.parse(json["subAccountId"]) : json["subAccountId"];
     }
     if (json.containsKey("subAccountName")) {
       subAccountName = json["subAccountName"];
@@ -1244,10 +1138,7 @@ class UserProfileList {
       etag = json["etag"];
     }
     if (json.containsKey("items")) {
-      items = [];
-      json["items"].forEach((item) {
-        items.add(new UserProfile.fromJson(item));
-      });
+      items = json["items"].map((itemsItem) => new UserProfile.fromJson(itemsItem)).toList();
     }
     if (json.containsKey("kind")) {
       kind = json["kind"];
@@ -1262,10 +1153,7 @@ class UserProfileList {
       output["etag"] = etag;
     }
     if (items != null) {
-      output["items"] = new core.List();
-      items.forEach((item) {
-        output["items"].add(item.toJson());
-      });
+      output["items"] = items.map((itemsItem) => itemsItem.toJson()).toList();
     }
     if (kind != null) {
       output["kind"] = kind;
@@ -1279,3 +1167,16 @@ class UserProfileList {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

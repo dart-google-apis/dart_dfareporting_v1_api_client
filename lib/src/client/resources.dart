@@ -1,9 +1,11 @@
-part of dfareporting_v1_api_client;
+part of dfareporting_v1_api;
 
-class DimensionValuesResource_ extends Resource {
+class DimensionValuesResource_ {
 
-  DimensionValuesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  DimensionValuesResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves list of report dimension values for a list of filters.
@@ -49,10 +51,12 @@ class DimensionValuesResource_ extends Resource {
   }
 }
 
-class FilesResource_ extends Resource {
+class FilesResource_ {
 
-  FilesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  FilesResource_(Client client) :
+      _client = client;
 
   /**
    * Lists files for a user profile.
@@ -116,14 +120,15 @@ class FilesResource_ extends Resource {
   }
 }
 
-class ReportsResource_ extends Resource {
+class ReportsResource_ {
 
-  ReportsFilesResource_ _files;
-  ReportsFilesResource_ get files => _files;
+  final Client _client;
 
-  ReportsResource_(Client client) : super(client) {
-  _files = new ReportsFilesResource_(client);
-  }
+  final ReportsFilesResource_ files;
+
+  ReportsResource_(Client client) :
+      _client = client,
+      files = new ReportsFilesResource_(client);
 
   /**
    * Deletes a report by its id.
@@ -414,10 +419,12 @@ class ReportsResource_ extends Resource {
   }
 }
 
-class ReportsFilesResource_ extends Resource {
+class ReportsFilesResource_ {
 
-  ReportsFilesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  ReportsFilesResource_(Client client) :
+      _client = client;
 
   /**
    * Retrieves a report file.
@@ -526,10 +533,12 @@ class ReportsFilesResource_ extends Resource {
   }
 }
 
-class UserProfilesResource_ extends Resource {
+class UserProfilesResource_ {
 
-  UserProfilesResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  UserProfilesResource_(Client client) :
+      _client = client;
 
   /**
    * Gets one user profile by id.
