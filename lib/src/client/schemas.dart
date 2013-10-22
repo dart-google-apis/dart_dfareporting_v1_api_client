@@ -43,7 +43,7 @@ class DimensionFilter {
   }
 
   /** Return String representation of DimensionFilter */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -108,7 +108,7 @@ class DimensionValue {
   }
 
   /** Return String representation of DimensionValue */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -164,7 +164,7 @@ class DimensionValueList {
   }
 
   /** Return String representation of DimensionValueList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -229,7 +229,7 @@ class DimensionValueRequest {
   }
 
   /** Return String representation of DimensionValueRequest */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -334,7 +334,7 @@ class File {
   }
 
   /** Return String representation of File */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -372,7 +372,7 @@ class FileDateRange {
   }
 
   /** Return String representation of FileDateRange */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -401,7 +401,7 @@ class FileUrls {
   }
 
   /** Return String representation of FileUrls */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -439,7 +439,7 @@ class FileUrlsCsv {
   }
 
   /** Return String representation of FileUrlsCsv */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -495,7 +495,7 @@ class FileList {
   }
 
   /** Return String representation of FileList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -623,7 +623,7 @@ class Report {
   }
 
   /** Return String representation of Report */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -698,7 +698,7 @@ Filters for different dimensions are ANDed, filters for the same dimension are g
   }
 
   /** Return String representation of ReportCriteria */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -736,7 +736,7 @@ class ReportCriteriaActivities {
   }
 
   /** Return String representation of ReportCriteriaActivities */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -765,7 +765,7 @@ class ReportCriteriaCustomRichMediaEvents {
   }
 
   /** Return String representation of ReportCriteriaCustomRichMediaEvents */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -827,7 +827,7 @@ class ReportCriteriaDateRange {
   }
 
   /** Return String representation of ReportCriteriaDateRange */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -919,7 +919,7 @@ Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" w
   }
 
   /** Return String representation of ReportSchedule */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -975,7 +975,7 @@ class ReportList {
   }
 
   /** Return String representation of ReportList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1024,7 +1024,7 @@ class SortedDimension {
   }
 
   /** Return String representation of SortedDimension */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1116,7 +1116,7 @@ class UserProfile {
   }
 
   /** Return String representation of UserProfile */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
@@ -1163,7 +1163,7 @@ class UserProfileList {
   }
 
   /** Return String representation of UserProfileList */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
