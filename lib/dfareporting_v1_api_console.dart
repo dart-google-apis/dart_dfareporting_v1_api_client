@@ -7,6 +7,7 @@ import 'package:google_dfareporting_v1_api/src/console_client.dart';
 import "package:google_dfareporting_v1_api/dfareporting_v1_api_client.dart";
 
 /** Lets you create, run and download reports. */
+@deprecated
 class Dfareporting extends Client with ConsoleClient {
 
   /** OAuth Scope2: View and manage DoubleClick for Advertisers reports */

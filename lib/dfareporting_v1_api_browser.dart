@@ -6,6 +6,7 @@ import 'package:google_dfareporting_v1_api/src/browser_client.dart';
 import "package:google_dfareporting_v1_api/dfareporting_v1_api_client.dart";
 
 /** Lets you create, run and download reports. */
+@deprecated
 class Dfareporting extends Client with BrowserClient {
 
   /** OAuth Scope2: View and manage DoubleClick for Advertisers reports */
